@@ -1,0 +1,44 @@
+body {
+    margin: 0;
+}
+.login {
+    color: #ffffff;
+}
+.login a {
+    color: #93AED8;
+}
+.login-form {
+    display: flex;
+    background-color: #3B5997;
+}
+.login-field {
+    display: flex; padding: 0;
+    flex-direction: column;
+    border: none;
+}
+.login input, .login-button {
+    padding: .25rem 1rem;
+    background-color: #FFFFFF;
+    border: 1px #CCCCCC solid;
+    border-radius: 0;
+}
+.login-button {
+    padding: .35rem 1rem;
+    background-color: #4267B2;
+    border: 1px #29487D solid;
+    color: #ffffff;
+}
+
+.signup fieldset {
+    display: flex;
+    flex-direction: column;
+    border: none;
+}
+.signup-field {
+    display: flex;
+}
+
+.tiny-text {
+    font-size: .75rem;
+}
+
