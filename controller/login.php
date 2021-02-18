@@ -19,7 +19,7 @@ $log = login( $login, $login_type, $pass );
 if( $log != false ) {
     session_start();
     $_SESSION["user"] = $log;
-    header("Location: /connected");
+    header("Location: /view/connected");
 } else {
     header("Location: /view?error=invalid");
 }

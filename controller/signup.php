@@ -36,7 +36,7 @@ if ( loginAvailable($login, $login_type) ) {
     if( $log == true ) {
         session_start();
         $_SESSION["user"] = $uid;
-        header("Location: /connected");
+        header("Location: /view/connected");
     } else {
         var_dump($log);
     }
