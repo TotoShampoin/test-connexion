@@ -16,32 +16,39 @@ function loginAvailable(string $login = "", $log_type) {
     }
 }
 
-function login(string $login, string $hashed_password, string $login_type) {
+function  login(
+                string $login, string $login_type, 
+                string $pass
+                ) {
     $db = $GLOBALS["db"];
-    $requete = "SELECT user.password FROM user WHERE user.$login_type = :login";
+    $requete = "SELECT user.id, user.password FROM user WHERE user.$login_type = :login";
     $stmt=$db->prepare($requete);
         $stmt->bindValue(":login", $login, PDO::PARAM_STR);
     $stmt->execute();
     $result=$stmt->fetch(PDO::FETCH_ASSOC);
-    if( $result != false && password_verify( $result["password"] , $hashed_password ) ) {
-        return true;
+    if( $result != false && password_verify( $pass , $result["password"]) ) {
+        return $result["id"];
     } else {
         return false;
     }
 }
 
-function signup(string $login, string $hashed_password, string $log_type) {
+function signup(
+                string $login, string $log_type, 
+                string $hashed_password, 
+                $first = null, $last = null, $birth = null, $gender = null
+                ) {
     $db = $GLOBALS["db"];
     $requete = "INSERT INTO `user` 
                 (`$log_type`, `password`, `name_first`, `name_last`, `birthday`, `gender`) 
         VALUES  (     :login,      :pass,       :first,       :last,     :birth,    :gend)";
     $stmt=$db->prepare($requete);
-        $stmt->bindValue(":login",  $login, PDO::PARAM_STR);
-        $stmt->bindValue(":pass" ,   $pass, PDO::PARAM_STR);
-        $stmt->bindValue(":first",  $first, PDO::PARAM_STR);
-        $stmt->bindValue(":last" ,   $last, PDO::PARAM_STR);
-        $stmt->bindValue(":birth",  $birth, PDO::PARAM_STR);
-        $stmt->bindValue(":gend" , $gender, PDO::PARAM_STR);
+        $stmt->bindValue(":login",           $login, PDO::PARAM_STR);
+        $stmt->bindValue(":pass" , $hashed_password, PDO::PARAM_STR);
+        $stmt->bindValue(":first",           $first, PDO::PARAM_STR);
+        $stmt->bindValue(":last" ,            $last, PDO::PARAM_STR);
+        $stmt->bindValue(":birth",           $birth, PDO::PARAM_STR);
+        $stmt->bindValue(":gend" ,          $gender, PDO::PARAM_STR);
     try {
         $stmt->execute();
         return true;
@@ -49,4 +56,15 @@ function signup(string $login, string $hashed_password, string $log_type) {
         return $e;
     }
 }
+
+function get_user( $id = null ) {
+    $db = $GLOBALS["db"];
+    $requete = "SELECT user.id, user.email, user.phone, user.name_first, user.name_last, user.birthday, user.gender FROM user WHERE user.id = :id";
+    $stmt=$db->prepare($requete);
+        $stmt->bindValue(":id", $id, PDO::PARAM_STR);
+    $stmt->execute();
+    $result=$stmt->fetch(PDO::FETCH_ASSOC);
+    return $result;
+}
+
 ?>

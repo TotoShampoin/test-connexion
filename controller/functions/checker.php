@@ -1,18 +1,14 @@
 <?php
 function isMail(string $mail = "") {
     $filtered_mail = filter_var($mail, FILTER_SANITIZE_EMAIL);
-    if ( !filter_var($filtered_mail, FILTER_VALIDATE_EMAIL) === false ) {
-        return true;
-    } else {
-        return false;
-    }
-};
+    return ( !filter_var($filtered_mail, FILTER_VALIDATE_EMAIL) === false );
+}
 function isPhone(string $phone = "") {
-    if( preg_match('/^[0-9]/', $phone) ) {
-        return true;
-    } else {
-        return false;
-    }
+    return ( preg_match('/^[0-9]/', $phone) );
+}
+
+function checkLogin(string $log1, string $log2) {
+    return ($log1 == $log2);
 }
 
 // Vérifier si le login est un e-mail ou un numéro de téléphone
