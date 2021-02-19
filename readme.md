@@ -16,7 +16,7 @@ Dans le dossier controller, il y a 3 pages PHP de redirection et 1 page PHP déd
 
 Un .htaccess a été préalablement déposé dans le dossier .secret de sortes à ce que personne ne puisse y accéder, hormis la machine elle-même (localhost).
 
-## Tester mon code sur son serveur
+## Tester le code sur votre serveur
 
 - Exécuter le fichier bdd.sql contenu dans le dossier model avec PhpMyAdmin.
   - Si PhpMyAdmin refuse de créer la BDD, le faire manuellement, puis exécuter le code de création de la table.
