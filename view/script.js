@@ -2,17 +2,15 @@
 
 // Les deux champs login sont-ils identiques
 function checkSignup() {
-    setTimeout(() => {
-        const $login1 = $("#login1");
-        const $login2 = $("#login2");
+    const $login1 = $("#login1");
+    const $login2 = $("#login2");
 
-        
-        if( $login1.val() == $login2.val()) {
-            return true;
-        } else {
-            return false;
-        }
-    }, 10);
+    
+    if( $login1.val() == $login2.val()) {
+        return true;
+    } else {
+        return false;
+    }
 }
 
 // Le champ date est-il valide
@@ -33,11 +31,20 @@ function checkDate() {
     }
 }
 
+// Le mot de passe est-il assez fort
+function checkPassword() {
+    const $pass = $("#pass1").val();
+    return /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-,.]).{8,}$/.test($pass);
+}
+
+// Si une des trois conditions au dessus est faux, on désactive le bouton Inscription
 function checkAll() {
     let check = true;
-    if( !checkDate() ) check = false;
-    if( !checkSignup() ) check = false;
+    if( !checkDate() ){ check = false; }
+    if( !checkSignup() ){ check = false; }
+    if( !checkPassword() ){ check = false; }
 
+    console.log(check)
     if( check ) {
         $(".signup-submit").removeAttr("disabled");
     } else {

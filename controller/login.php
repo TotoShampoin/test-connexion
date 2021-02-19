@@ -15,6 +15,7 @@ if( $login_type == "invalid" ) {
     header("Location: /view?error=login_type");
 }
 
+// Si les informations sont valides, on se connecte
 $log = login( $login, $login_type, $pass );
 if( $log != false ) {
     session_start();

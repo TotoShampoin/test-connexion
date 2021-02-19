@@ -2,9 +2,9 @@
 
 | Langage | Temps  |
 | ------- | ------ |
-| MySQL   | 0h 15m |
+| MySQL   | 0h 20m |
 | PHP     | 2h 45m |
 | HTML    | 1h     |
-| CSS     | 0h 15m |
-| JS      | 0h 45m |
+| CSS     | 1h 45m |
+| JS      | 1h     |
 

@@ -1,4 +1,5 @@
 <?php
+// Pour qu'une requête ajax puisse obtenir les infos de l'utilisateur actuel
 header("Content-Type: application/json");
 include "./functions/db_functions.php";
 

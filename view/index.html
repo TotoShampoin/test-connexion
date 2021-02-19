@@ -20,7 +20,7 @@
                 <a href="#" class="tiny-text">Informations de compte oubliées ?</a>
             </fieldset>
             <fieldset class="login-field">
-                <div>.</div>
+                <div class="empty"></div>
                 <button type="submit" class="login-button">Connexion</button>
             </fieldset>
         </form>
@@ -28,46 +28,38 @@
     <div class="signup">
         <form action="/controller/signup.php" method="post" class="signup-form">
             <h1>Inscription</h1>
-            <h2>C'est gratuit (et ça le restera toujours)</h2>
-            <fieldset>
-                <div class="signup-field">
-                    <input type="text" name="first" placeholder="Prénom" required>
-                    <input type="text" name="last" placeholder="Nom de famille" required>
-                </div>
-                <div class="signup-field">
-                    <input type="text" name="login" id="login1" placeholder="Numéro de mobile ou email" required>
-                </div>
-                <div class="signup-field">
-                    <input type="text" name="login2" id="login2" placeholder="Confirmer numéro de mobile ou email" required>
-                </div>
-                <div class="signup-field">
-                    <input type="password" name="pass" placeholder="Nouveau mot de passe" required>
-                </div>
+            <p>C'est gratuit (et ça le restera toujours)</p>
+            <fieldset class="field field-grid">
+                <input type="text" name="first" placeholder="Prénom" class="signup-input" required>
+                <input type="text" name="last" placeholder="Nom de famille" class="signup-input" required>
+                <input type="text" name="login" id="login1" placeholder="Numéro de mobile ou email" class="signup-input grid-2" required>
+                <input type="text" name="login2" id="login2" placeholder="Confirmer numéro de mobile ou email" class="signup-input grid-2" required>
+                <input type="password" name="pass" id="pass1" placeholder="Nouveau mot de passe" class="signup-input grid-2" required>
             </fieldset>
-            <fieldset>
+            <fieldset class="field field-martop">
                 <legend>Date de naissance</legend>
-                <div class="signup-field">
-                    <input type="number" name="day" id="day" placeholder="Jour" min="1" max="31" maxlength="2" required>
-                    <input type="number" name="month" id="month" placeholder="Mois" min="1" max="12" maxlength="2" required>
-                    <input type="number" name="year" id="year" placeholder="Année" min="1970" max="2021" maxlength="2" required>
-                    <a href="#" class="why-birth tiny-text">Pourquoi indiquer ma date de naissance ?</a>
+                <div class="signup-field-2">
+                    <input type="number" name="day" id="day" placeholder="Jour" min="1" max="31" maxlength="2" class="signup-input date-input" required>
+                    <input type="number" name="month" id="month" placeholder="Mois" min="1" max="12" maxlength="2" class="signup-input date-input" required>
+                    <input type="number" name="year" id="year" placeholder="Année" min="1970" max="2021" maxlength="2" class="signup-input date-input" required>
+                    <a href="#" class="signup-whybirth tiny-text">Pourquoi indiquer ma date de naissance ?</a>
                 </div>
             </fieldset>
-            <fieldset>
-                <div class="signup-field">
-                    <input type="radio" name="gender" value="woman" id="woman" required>
-                    <label for="woman">Femme</label>
+            <fieldset class="field">
+                <div class="signup-field gender-field">
+                    <input type="radio" name="gender" value="woman" class="signup-input" id="woman" required>
+                    <label for="woman" class="gender-label">Femme</label>
                     
-                    <input type="radio" name="gender" value="man" id="man">
-                    <label for="man">Homme</label>
+                    <input type="radio" name="gender" value="man" class="signup-input" id="man">
+                    <label for="man" class="gender-label">Homme</label>
                 </div>
             </fieldset>
-            <fieldset>
-                <p class="tiny-text">
+            <fieldset class="field">
+                <p class="signup-tos">
                     En cliquant sur Inscription, vous acceptez nos <a href="#">Conditions</a> et indiquez que vous avez lu notre <a href="#">Politique d'utilisation des données</a>, y compris notre <a href="#">Utilisation des cookies</a>. Vous pourrez recevoir des notifications par texto de la part de Facebook et pouvez vous désabonner à tout moment.
                 </p>
                 <div class="signup-field">
-                    <button type="submit" class="signup-submit">Inscription</button>
+                    <button type="submit" class="signup-input signup-submit">Inscription</button>
                 </div>
             </fieldset>
         </form>

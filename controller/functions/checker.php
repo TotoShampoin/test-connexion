@@ -1,12 +1,14 @@
 <?php
+// Vérifier si l'e-mail est valide
 function isMail(string $mail = "") {
     $filtered_mail = filter_var($mail, FILTER_SANITIZE_EMAIL);
     return ( !filter_var($filtered_mail, FILTER_VALIDATE_EMAIL) === false );
 }
+// Vérifier si le numéro de téléphone est valide
 function isPhone(string $phone = "") {
     return ( preg_match('/^[0-9]/', $phone) );
 }
-
+// Vérifier si le login1 et le login2 correspondent
 function checkLogin(string $log1, string $log2) {
     return ($log1 == $log2);
 }
