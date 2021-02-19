@@ -8,11 +8,11 @@ if( isset($_POST["login"]) && isset($_POST["pass"]) ) {
     $pass       = $_POST["pass"];
     $login_type = checkLoginType($login);
 } else {
-    header("Location: /view?error=log_pass_missing");
+    header("Location: /view/error.php?type=log_pass_missing");
 }
 
 if( $login_type == "invalid" ) {
-    header("Location: /view?error=login_type");
+    header("Location: /view/error.php?type=login_type");
 }
 
 // Si les informations sont valides, on se connecte
@@ -22,7 +22,7 @@ if( $log != false ) {
     $_SESSION["user"] = $log;
     header("Location: /view/connected");
 } else {
-    header("Location: /view?error=invalid");
+    header("Location: /view/error.php?type=invalid");
 }
 
 ?>
