@@ -31,7 +31,7 @@ Un .htaccess a été préalablement déposé dans le dossier .secret de sortes �
 | ------- | ------ |
 | MySQL   | 0h 15m |
 | PHP     | 2h 45m |
-| HTML    | 1h     |
+| HTML    | 1h 15m |
 | CSS     | 1h 45m |
 | JS      | 1h 15m |
 
