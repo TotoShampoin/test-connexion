@@ -1,4 +1,4 @@
-# Test: Page de connexion Facebook
+# Test: Page de connexion
 
 ## Comment fonctionne-t-elle?
 
